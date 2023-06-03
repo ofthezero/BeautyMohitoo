@@ -1,0 +1,137 @@
+﻿<Window x:Class="BeautyMohito.Backup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BeautyMohito"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1080" WindowStartupLocation="CenterScreen"   WindowStyle="None" 
+        AllowsTransparency="True" Background="Transparent">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </Window.Resources>
+
+    <Border CornerRadius="30" Background="#EFF2F7" MouseDown="Border_MouseDown" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="1" Background="#2c4f49" CornerRadius="0 50 0 30" Margin="0,115,0,0">
+                    <DockPanel>
+
+                        <TextBlock Text="admin" Foreground="White" FontSize="28" FontWeight="SemiBold" DockPanel.Dock="Top"  FontFamily="Copperplate Gothic Light"  Margin="5 25 0 10" TextAlignment="Center"/>
+                        <TextBlock Text="Александр Манукян" Foreground="#d5bea9" FontSize="14" FontWeight="SemiBold" DockPanel.Dock="Top" TextAlignment="Center"/>
+
+                        <Separator Margin="25" Background="#d5bea9" DockPanel.Dock="Top" Height="0.8"/>
+
+                        <StackPanel DockPanel.Dock="Top" >
+
+                          
+
+                            <Button Style="{StaticResource menuButton}" Background="#d5bea9" Foreground="White" Cursor="Hand" Click="Backup_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="BackupRestore" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Бэкап"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button Style="{StaticResource menuButton}"  Cursor="Hand" Click="User_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="AccountMultipleOutline" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Пользователи"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Style="{StaticResource menuButton}"  Cursor="Hand" Click="Roles_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="Lock" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Роли"/>
+                                </StackPanel>
+                            </Button>
+
+                        </StackPanel>
+
+                        <Button x:Name="Exit" Style="{StaticResource menuButton}" Cursor="Hand" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="15 0 15 20" Click="Exit_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Icon:PackIconMaterial Kind="Logout" Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="Выход"/>
+                            </StackPanel>
+                        </Button>
+
+                    </DockPanel>
+                </Border>
+                <TextBlock Text="MOHITO" Foreground="#2c4f49" FontSize="28" FontWeight="SemiBold"  FontFamily="Copperplate Gothic Light" TextAlignment="Center" Margin="0,33,0,656" Grid.Row="1"/>
+
+            </Grid>
+
+            <Grid Grid.Column="1" Margin="25,30,25,48">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Margin="741,0,0,484">
+                    <Button Style="{StaticResource topButton}" Cursor="Hand" Margin="0 0 20 0" >
+                        <Icon:PackIconMaterial Kind="Cog"/>
+                    </Button>
+
+                    <Button Style="{StaticResource topButton}" Cursor="Hand" Margin="0 0 55 0">
+                        <Icon:PackIconMaterial Kind="Bell"/>
+                    </Button>
+                </Grid>
+
+                <Grid Margin="0,128,0,64" Grid.RowSpan="6" Cursor="">
+
+                    <TextBlock x:Name="tb_error" Text="" Margin="122,339,122,63" Foreground="#FFFFA9A9" TextWrapping="Wrap" TextAlignment="Center" FontSize="16" FontFamily="Bodoni MT"/>
+                    <TextBlock x:Name="tb_ok" Text="" Margin="122,339,122,63" Foreground="#FF6EF961" TextWrapping="Wrap" TextAlignment="Center" FontSize="16" FontFamily="Bodoni MT"/>
+
+
+                    <TextBox x:Name="tb1" materialDesign:HintAssist.Hint="Выберите папку для хранения резервной копии" MaxLength="50" IsReadOnly ="True" Margin="180,143,300,0" VerticalAlignment="Top" Foreground="Black" BorderBrush="#B38B59" Cursor="Arrow"  />
+                    <TextBox x:Name="tb2" materialDesign:HintAssist.Hint="Выберите файл базы данных" MaxLength="50" IsReadOnly ="True" Margin="180,241,300,0" VerticalAlignment="Top" Foreground="Black" BorderBrush="#B38B59" Cursor="Arrow" Height="25"  />
+
+                    <Button x:Name="Brow" Style="{StaticResource addButton}" Margin="0,126,136,289" Width="132" Cursor="Hand"  Click="Brow_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Icon:PackIconMaterial Kind="FolderSearch" VerticalAlignment="Center" Margin="0 1 8 0" Width="11" Height="11"/>
+                            <TextBlock Text="Выбрать папку"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="RE" Style="{StaticResource addButton}" Margin="0,166,136,249" Width="132" Cursor="Hand" Click="RE_Click" Opacity="1">
+                        <StackPanel Orientation="Horizontal">
+                            <Icon:PackIconMaterial Kind="BackupRestore" VerticalAlignment="Center" Margin="0 1 8 0" Width="11" Height="11"/>
+                            <TextBlock Text="Создать копию"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="Brow2" Style="{StaticResource addButton}" Margin="0,222,136,193" Width="132" Cursor="Hand"  Click="Brow2_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Icon:PackIconMaterial Kind="FileSearch" VerticalAlignment="Center" Margin="0 1 8 0" Width="11" Height="11"/>
+                            <TextBlock Text="Выбрать файл"/>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="Voss" Style="{StaticResource addButton}" Margin="0,260,136,154" Width="132" Cursor="Hand"  Click="Voss_Click" Opacity="1" >
+                        <StackPanel Orientation="Horizontal">
+                            <Icon:PackIconMaterial Kind="Restore" VerticalAlignment="Center" Margin="0 1 8 0" Width="11" Height="11"/>
+                            <TextBlock Text="Восстановить"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

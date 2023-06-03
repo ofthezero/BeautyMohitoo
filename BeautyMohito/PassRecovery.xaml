@@ -1,0 +1,112 @@
+﻿<Window x:Class="BeautyMohito.PassRecovery"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:BeautyMohito"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1080" WindowStartupLocation="CenterScreen"   WindowStyle="None" 
+        AllowsTransparency="True" Background="Transparent">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </Window.Resources>
+
+    <Border CornerRadius="30" Background="#EFF2F7" MouseDown="Border_MouseDown" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="63*"/>
+                <ColumnDefinition Width="157*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.ColumnSpan="2" Margin="0,0,201,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+                <Border Grid.Row="1" Background="#2c4f49" CornerRadius="30 30 30 30"  Margin="0,0,-196,0">
+                    <Grid>
+                        <TextBlock Text="MOHITO" Foreground="#d5bea9" FontSize="37" FontWeight="SemiBold"  FontFamily="Copperplate Gothic Light" TextAlignment="Center" Margin="98,327,98,343"/>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <StackPanel Grid.Column="2" Margin="573,24,23,666">
+                <Button x:Name="Close" Style="{StaticResource topButton}" Cursor="Hand" Click="Close_Click">
+                    <Icon:PackIconMaterial Kind="Close"/>
+                </Button>
+            </StackPanel>
+            <Button x:Name="Back" Style="{StaticResource topButton}" Cursor="Hand" Margin="0,18,153,672" Click="Back_Click">
+
+                <materialDesign:PackIcon Kind="ArrowBack" Height="27" Width="30"/>
+            </Button>
+
+            <Button Style="{StaticResource addButton}" Margin="0,389,150,296" Width="280" Cursor="Hand" Grid.Column="2" x:Name="Update" Click="Update_Click" 
+                    Grid.ColumnSpan="2" Visibility="Visible" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Изменить пароль"/>
+                </StackPanel>
+            </Button>
+            <Button Style="{StaticResource addButton}" Margin="0,389,150,296" Width="280" Cursor="Hand" Grid.Column="2" x:Name="UpdateOn" Click="UpdateOn_Click" 
+                    Grid.ColumnSpan="2" Visibility="Collapsed" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Изменить пароль"/>
+                </StackPanel>
+            </Button>
+            <TextBlock x:Name="tb_error" Text="" Margin="196,460,152,192" Foreground="#FFEB2121" TextWrapping="Wrap" TextAlignment="Center" FontSize="16" FontFamily="Bodoni MT" Grid.Column="2"/>
+
+            <StackPanel x:Name="jj" Orientation="Horizontal" Grid.ColumnSpan="3" Margin="126,0,0,621"/>
+
+            <TextBlock Text="Восстановление пароля" TextWrapping="WrapWithOverflow" Foreground="#2c4f49" FontSize="35" FontWeight="Bold"  FontFamily="Corbel Light"  TextAlignment="Center" Margin="142,171,98,506" Grid.Column="2"/>
+
+            <materialDesign:PackIcon x:Name="eye" Kind="eye" Foreground="BLACK" Width="24" Height="24" Grid.Column="2" Margin="486,284,0,0" Visibility="Visible" />
+
+            <Button Margin="480,276,112,412" Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ButtonAssist.CornerRadius="20"  Background="{x:Null}"
+              BorderBrush="{x:Null}" x:Name="Eye" Click="Eye_Click" Grid.Column="2" Width="35" Cursor="Hand" Visibility="Visible">
+
+            </Button>
+
+            <materialDesign:PackIcon x:Name="eyeoff" Kind="EyeOff" Foreground="BLACK" Width="24" Height="25" Grid.Column="2" Margin="486,283,0,0" Visibility="Collapsed" />
+
+            <Button Margin="486,276,112,412" Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ButtonAssist.CornerRadius="20"  Background="{x:Null}"
+              BorderBrush="{x:Null}"   x:Name="Eyeoff" Grid.Column="2" Cursor="Hand" Click="Eyeoff_Click" Visibility="Visible"/>
+
+            <StackPanel Grid.Column="2" Margin="180,272,152,402">
+                <StackPanel Orientation="Horizontal" Margin="10" Width="288">
+                    <materialDesign:PackIcon Kind="Lock" Width="25" Height="25" Foreground="BLACK"/>
+                    <PasswordBox x:Name="Password" PasswordChar="●" Margin="10 0" materialDesign:HintAssist.Hint="●●●●●●●●●●" Foreground="BLACK" Width="250" BorderBrush="BLACK" CaretBrush="#B38B59" SelectionBrush="#B38B59" Cursor="IBeam" Visibility="Visible" />
+
+                    <TextBox x:Name="Pro" Margin="10 0" Visibility="Collapsed"  materialDesign:HintAssist.Hint="Введите пароль" Foreground="BLACK" Width="250" BorderBrush="BLACK" CaretBrush="#B38B59" SelectionBrush="#B38B59" Cursor="Arrow" />
+
+                </StackPanel>
+                <StackPanel Margin="10" HorizontalAlignment="Center"/>
+            </StackPanel>
+
+            <materialDesign:PackIcon x:Name="eyes" Kind="eye" Foreground="BLACK" Width="24" Height="24" Grid.Column="2" Margin="486,337,0,0" Visibility="Visible" />
+
+            <Button Margin="481,328,112,360" Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ButtonAssist.CornerRadius="20"  Background="{x:Null}"
+              BorderBrush="{x:Null}" x:Name="Eyes" Click="Eyes_Click" Grid.Column="2" Cursor="Hand" Visibility="Visible"/>
+
+            <materialDesign:PackIcon x:Name="eyeoffs" Kind="EyeOff" Foreground="BLACK" Width="24" Height="26" Grid.Column="2" Margin="486,336,0,0" Visibility="Collapsed" />
+
+            <Button Margin="486,328,112,360" Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ButtonAssist.CornerRadius="20"  Background="{x:Null}"
+              BorderBrush="{x:Null}"   x:Name="Eyeoffs" Grid.Column="2" Cursor="Hand" Click="Eyeoffs_Click" Visibility="Collapsed"/>
+
+            <StackPanel Grid.Column="2" Margin="180,324,152,350">
+                <StackPanel Orientation="Horizontal" Margin="10" Width="288">
+                    <materialDesign:PackIcon Kind="Lock" Width="25" Height="25" Foreground="BLACK"/>
+                    <PasswordBox x:Name="Passwords" PasswordChar="●" Margin="10 0" materialDesign:HintAssist.Hint="●●●●●●●●●●" Foreground="BLACK" Width="250" BorderBrush="BLACK" CaretBrush="#B38B59" SelectionBrush="#B38B59" Cursor="IBeam" Visibility="Visible" />
+
+                    <TextBox x:Name="Pros" Margin="10 0" Visibility="Collapsed"  materialDesign:HintAssist.Hint="Введите пароль" Foreground="BLACK" Width="250" BorderBrush="BLACK" CaretBrush="#B38B59" SelectionBrush="#B38B59" Cursor="Arrow" />
+
+                </StackPanel>
+                <StackPanel Margin="10" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
