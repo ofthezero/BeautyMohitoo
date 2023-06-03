@@ -162,7 +162,7 @@ namespace BeautyMohito
                 }
                 else
                 {
-                    new EmployeeTableAdapter().DeleteQuery(Convert.ToInt32((membersDataGrid.SelectedItems[0] as DataRowView).Row.ItemArray[0]));
+                    new BookingTableAdapter().DeleteQuery(Convert.ToInt32((membersDataGrid.SelectedItems[0] as DataRowView).Row.ItemArray[0]));
                     RefreshData();
                 }
             }

@@ -112,7 +112,7 @@ namespace BeautyMohito
                     tb_ok.Text = "✔ Данные успешно добавлены";
 
                     RefreshData();
-                    
+
                 }
                 else
                 {
@@ -131,9 +131,9 @@ namespace BeautyMohito
         {
             try
             {
-                if (!String.IsNullOrWhiteSpace(NameTB.Text) && !String.IsNullOrWhiteSpace(SurnameTB.Text) 
-                            && !String.IsNullOrWhiteSpace(NumberTB.Text) && !String.IsNullOrWhiteSpace(DateDP.Text)  &&
-                            NameTB.Text.Length >= 4 && SurnameTB.Text.Length >= 2  && NumberTB.Text.Length >= 7 && Convert.ToInt32(IdUTB.SelectedValue) > -1 && Convert.ToInt32(IdPTB.SelectedValue) > -1)
+                if (!String.IsNullOrWhiteSpace(NameTB.Text) && !String.IsNullOrWhiteSpace(SurnameTB.Text)
+                            && !String.IsNullOrWhiteSpace(NumberTB.Text) && !String.IsNullOrWhiteSpace(DateDP.Text) &&
+                            NameTB.Text.Length >= 4 && SurnameTB.Text.Length >= 2 && NumberTB.Text.Length >= 7 && Convert.ToInt32(IdUTB.SelectedValue) > -1 && Convert.ToInt32(IdPTB.SelectedValue) > -1)
                 {
                     new EmployeeTableAdapter().UpdateQuery(Convert.ToString(NameTB.Text), Convert.ToString(SurnameTB.Text), Convert.ToString(PetronymicTB.Text),
                        Convert.ToString(NumberTB.Text), Convert.ToDateTime(DateDP.Text), Convert.ToInt32(IdUTB.SelectedItem), Convert.ToInt32(IdPTB.SelectedItem), Convert.ToInt32(IdOn));

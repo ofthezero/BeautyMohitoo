@@ -222,9 +222,9 @@ namespace BeautyMohito
 
         private void ad_Copy_Click(object sender, RoutedEventArgs e)
         {
-            //Manager manager = new Manager();
-            //manager.Show();
-            //this.Close();
+            Book book = new Book();
+            book.Show();
+            this.Close();
         }
     }
 }
