@@ -253,6 +253,8 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+            
+            
 
 
         <Style x:Key="gridButtonIcon" TargetType="Icon:PackIconMaterial">
@@ -261,8 +263,27 @@
             <Setter Property="Height" Value="12" />
         </Style>
 
+            <Style x:Key="gridPrintButton" TargetType="Button" BasedOn="{StaticResource gridEditButton}">
+                <Setter Property="Background" Value="#2c4f49" />
+                <Setter Property="BorderBrush" Value="#FF203C31" />
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#FF3C6F66" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
 
-        <!--#region DataGrid Style-->
+
+
+
+            <Style x:Key="gridButtonIcon1" TargetType="Icon:PackIconMaterial">
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Width" Value="12" />
+                <Setter Property="Height" Value="12" />
+            </Style>
+
+
+            <!--#region DataGrid Style-->
 
         <Style x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}" TargetType="{x:Type Button}">
             <Setter Property="Template">

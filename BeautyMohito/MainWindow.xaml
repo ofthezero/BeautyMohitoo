@@ -218,7 +218,7 @@
                         <TextBlock Text="ОК"/>
                     </StackPanel>
                 </Button>
-                <Button x:Name="ad_Copy1" Style="{StaticResource addButton}" Margin="0,4,0,24" Width="93" Cursor="Hand"  HorizontalAlignment="Left" Click="ad_Copy_Click" Grid.Row="1">
+                <Button x:Name="ad_Copy1" Style="{StaticResource addButton}" Margin="0,4,0,24" Width="93" Cursor="Hand"  HorizontalAlignment="Left" Click="ad_Copcy_Click" Grid.Row="1">
                     <StackPanel Orientation="Horizontal">
                         <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Margin="0 1 8 0" Width="11" Height="11"/>
                         <TextBlock Text="Финансы"/>

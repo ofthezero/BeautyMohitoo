@@ -1,4 +1,4 @@
-﻿<Window x:Class="BeautyMohito.Cheque"
+﻿<Window x:Class="BeautyMohito.OneCheque"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
@@ -29,43 +29,26 @@
                 <Border Grid.Row="1" Background="#2c4f49" CornerRadius="0 50 0 30" Margin="0,115,0,0">
                     <DockPanel>
 
-                        <TextBlock Text="manager" Foreground="White" FontSize="28" FontWeight="SemiBold" DockPanel.Dock="Top"  FontFamily="Copperplate Gothic Light"  Margin="5 25 0 10" TextAlignment="Center"/>
-                        <TextBlock Text="Алия Афанасьева" Foreground="#d5bea9" FontSize="14" FontWeight="SemiBold" DockPanel.Dock="Top" TextAlignment="Center"/>
-                        
+                        <TextBlock Text="CFO" Foreground="White" FontSize="28" FontWeight="SemiBold" DockPanel.Dock="Top"  FontFamily="Copperplate Gothic Light"  Margin="5 25 0 10" TextAlignment="Center"/>
+                        <TextBlock Text="Кристина Демина" Foreground="#d5bea9" FontSize="14" FontWeight="SemiBold" DockPanel.Dock="Top" TextAlignment="Center"/>
+
                         <Separator Margin="25" Background="#d5bea9" DockPanel.Dock="Top" Height="0.8"/>
 
                         <StackPanel DockPanel.Dock="Top" >
 
 
-                            <Button Style="{StaticResource menuButton}" Cursor="Hand" Click="Book_Click">
+                            <Button Style="{StaticResource menuButton}"  Cursor="Hand" Click="Statistics_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Icon:PackIconMaterial Kind="Book" Style="{StaticResource menuButtonIcon}"/>
-                                    <TextBlock Text="Записи"/>
+                                    <Icon:PackIconMaterial Kind="ChartArc" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Ствтистика" />
                                 </StackPanel>
                             </Button>
 
-                            <Button Style="{StaticResource menuButton}" Cursor="Hand" Background="#d5bea9" Foreground="White" Click="Cheque_Click">
+
+                            <Button Style="{StaticResource menuButton}" Background="#d5bea9" Foreground="White"  Cursor="Hand" >
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="Shopping" Style="{StaticResource menuButtonIcon}"/>
                                     <TextBlock Text="Продажи"/>
-                                </StackPanel>
-                            </Button>
-                            <Button Style="{StaticResource menuButton}" Cursor="Hand" Click="Client_Click">
-                                <StackPanel Orientation="Horizontal">
-                                    <Icon:PackIconMaterial Kind="AccountMultipleOutline" Style="{StaticResource menuButtonIcon}"/>
-                                    <TextBlock Text="Клиенты"/>
-                                </StackPanel>
-                            </Button>
-                            <Button Style="{StaticResource menuButton}" Cursor="Hand" Click="Service_Click">
-                                <StackPanel Orientation="Horizontal">
-                                    <Icon:PackIconMaterial Kind="DockRight" Style="{StaticResource menuButtonIcon}"/>
-                                    <TextBlock Text="Услуги"/>
-                                </StackPanel>
-                            </Button>
-                            <Button Style="{StaticResource menuButton}"  Cursor="Hand" Click="Review_Click">
-                                <StackPanel Orientation="Horizontal">
-                                    <Icon:PackIconMaterial Kind="Star" Style="{StaticResource menuButtonIcon}"/>
-                                    <TextBlock Text="Отзывы"/>
                                 </StackPanel>
                             </Button>
 
@@ -84,7 +67,7 @@
 
             </Grid>
 
-            <Grid Grid.Column="1" Margin="25,30,25,48">
+            <Grid Grid.Column="1" Margin="25,31,25,48">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -101,13 +84,6 @@
 
                 <Button Style="{StaticResource topButton}" Cursor="Hand" Margin="0 0 55 0">
                     <Icon:PackIconMaterial Kind="Bell"/>
-                </Button>
-
-                <Button x:Name="UpdateUserBtn" Style="{StaticResource addButton}" Margin="0,24,0,4" Grid.Row="1" Width="174" Cursor="Hand" Click="UpdateUserBtn_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Margin="0 1 8 0" Width="11" Height="11"/>
-                        <TextBlock Text="Пробить чек"/>
-                    </StackPanel>
                 </Button>
 
                 <Separator Height="1" Grid.Row="3" Background="#DAE2EA" Margin="0 -1 0 10"/>

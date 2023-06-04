@@ -30,6 +30,25 @@ namespace BeautyMohito
             DbMohito = new DbMohito();
             BookingTableAdapter = new BookingTableAdapter();
             BookingTableAdapter.Fill(DbMohito.Booking);
+
+            NameEmployeeViewTableAdapter adapterU = new NameEmployeeViewTableAdapter(); //вывод данных - 
+            DbMohito.NameEmployeeViewDataTable tableU = new DbMohito.NameEmployeeViewDataTable();
+            adapterU.Fill(tableU); IdETB.ItemsSource = tableU;
+            IdETB.DisplayMemberPath = "Names";
+            IdETB.SelectedValuePath = "ID_employee";
+
+            NameClientViewTableAdapter adapter2 = new NameClientViewTableAdapter(); //вывод данных - 
+            DbMohito.NameClientViewDataTable table2 = new DbMohito.NameClientViewDataTable();
+            adapter2.Fill(table2); IdCTB.ItemsSource = table2;
+            IdCTB.DisplayMemberPath = "Names";
+            IdCTB.SelectedValuePath = "ID_client";
+
+            ServiceTableAdapter adapter3 = new ServiceTableAdapter(); //вывод данных -
+            DbMohito.ServiceDataTable table3 = new DbMohito.ServiceDataTable();
+            adapter3.Fill(table3); IdSTB.ItemsSource = table3;
+            IdSTB.DisplayMemberPath = "Name_service";
+            IdSTB.SelectedValuePath = "ID_service";
+
         }
 
         private bool IsMaximize = false;
@@ -85,8 +104,8 @@ namespace BeautyMohito
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            Employee Employee = new Employee();
-            Employee.Show();
+            Book book = new Book();
+            book.Show();
             this.Close();
 
             UpdateBtn.Visibility = Visibility.Collapsed;

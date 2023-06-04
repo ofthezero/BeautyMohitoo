@@ -29,6 +29,12 @@ namespace BeautyMohito
             DbMohito = new DbMohito();
             EquipmentTableAdapter = new EquipmentTableAdapter();
             EquipmentTableAdapter.Fill(DbMohito.Equipment);
+
+            NameEmployeeViewTableAdapter adapterU = new NameEmployeeViewTableAdapter(); //вывод данных - 
+            DbMohito.NameEmployeeViewDataTable tableU = new DbMohito.NameEmployeeViewDataTable();
+            adapterU.Fill(tableU); IdETB.ItemsSource = tableU;
+            IdETB.DisplayMemberPath = "Names";
+            IdETB.SelectedValuePath = "ID_employee";
         }
 
         private bool IsMaximize = false;
@@ -102,10 +108,10 @@ namespace BeautyMohito
             {
                 if (!String.IsNullOrWhiteSpace(NameTB.Text) && !String.IsNullOrWhiteSpace(QuantityTB.Text) && !String.IsNullOrWhiteSpace(CostTB.Text) 
                     && !String.IsNullOrWhiteSpace(IdETB.Text) && !String.IsNullOrWhiteSpace(LifeDP.Text) && !String.IsNullOrWhiteSpace(StatusTB.Text) &&
-                    NameTB.Text.Length >= 4 && CostTB.Text.Length >= 2 && StatusTB.Text.Length >= 5 && QuantityTB.Text.Length >= 1 && IdETB.Text.Length != -1)
+                    NameTB.Text.Length >= 4 && CostTB.Text.Length >= 2 && StatusTB.Text.Length >= 5 && QuantityTB.Text.Length >= 1 && Convert.ToInt32(IdETB.SelectedValue) != -1)
                 {
                     new EquipmentTableAdapter().InsertQuery(Convert.ToString(NameTB.Text), Convert.ToInt32(QuantityTB.Text), Convert.ToDecimal(CostTB.Text),
-                        Convert.ToInt32(IdETB.SelectedItem), Convert.ToDateTime(LifeDP.Text), Convert.ToString(StatusTB.Text));
+                        Convert.ToInt32(IdETB.SelectedValue), Convert.ToDateTime(LifeDP.Text), Convert.ToString(StatusTB.Text));
                     tb_error.Text = "";
                     tb_ok.Text = "✔ Данные успешно добавлены";
 

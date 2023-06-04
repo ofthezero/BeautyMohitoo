@@ -199,12 +199,26 @@ namespace BeautyMohito
             this.Close();
         }
 
+        private void Service_Click(object sender, RoutedEventArgs e)
+        {
+            Service service = new Service();
+            service.Show();
+            this.Close();
+        }
+
+        private void Client_Click(object sender, RoutedEventArgs e)
+        {
+            Client client = new Client();
+            client.Show();
+            this.Close();
+        }
+
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
             if (membersDataGrid.SelectedItem != null)
             {
-                UpdateUser updateUser = new UpdateUser();
-                updateUser.Show();
+                UpdateBook updateBook = new UpdateBook();
+                updateBook.Show();
                 this.Close();
             }
         }
@@ -246,6 +260,6 @@ namespace BeautyMohito
             }
         }
 
-      
+       
     }
 }

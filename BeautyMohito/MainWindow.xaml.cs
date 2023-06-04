@@ -222,8 +222,19 @@ namespace BeautyMohito
 
         private void ad_Copy_Click(object sender, RoutedEventArgs e)
         {
-            Book book = new Book();
-            book.Show();
+            //Statistics statistics = new Statistics();
+            //statistics.Show();
+            //this.Close();
+
+            Cheque equipment = new Cheque();
+            equipment.Show();
+            this.Close();
+        }
+
+        private void ad_Copcy_Click(object sender, RoutedEventArgs e)
+        {
+            Statistics statistics = new Statistics();
+            statistics.Show();
             this.Close();
         }
     }

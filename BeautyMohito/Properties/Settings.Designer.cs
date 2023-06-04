@@ -32,5 +32,26 @@ namespace BeautyMohito.Properties {
                 return ((string)(this["MohitoConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ROBERT;Initial Catalog=Mohito;Integrated Security=True")]
+        public string BeautyMohitoConnectionString {
+            get {
+                return ((string)(this["BeautyMohitoConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ROBERT;Initial Catalog=Mohito;Persist Security Info=True;User ID=rowm" +
+            "o;Password=awess")]
+        public string MohitoConnectionString1 {
+            get {
+                return ((string)(this["MohitoConnectionString1"]));
+            }
+        }
     }
 }

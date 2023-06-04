@@ -8,28 +8,27 @@ using System.Windows.Input;
 namespace BeautyMohito
 {
 
-    public partial class UpdateEmployee : Window
+    public partial class UpdateClient : Window
     {
         SqlConnection con = new SqlConnection();
-        DbMohito DbMohito; EmployeeTableAdapter EmployeeTableAdapter;
+        DbMohito DbMohito; ClientTableAdapter ClientTableAdapter;
 
 
-        string IdOn = Employee.IdOn;
-        string NameOn = Employee.NameOn;
-        string SurnameOn = Employee.SurnameOn;
-        string NumberOn = Employee.NumberOn;
-        string DateOn = Employee.DateOn;
-        string IdUOn = Employee.IdUOn;
-        string IdPOn = Employee.IdPOn;
+        string IdOn = Client.IdOn;
+        string NameOn = Client.NameOn;
+        string SurnameOn = Client.SurnameOn;
+        string NumberOn = Client.NumberOn;
+        string NotesOn = Client.NotesOn;
+        string EmailOn = Client.EmailOn;
 
 
-        public UpdateEmployee()
+        public UpdateClient()
         {
             InitializeComponent(); RefreshData();
             //   con.ConnectionString = ConfigurationManager.ConnectionStrings["BeautyMohito.Properties.Settings.BeautyMohitoConnectionString"].ConnectionString.ToString();
             DbMohito = new DbMohito();
-            EmployeeTableAdapter = new EmployeeTableAdapter();
-            EmployeeTableAdapter.Fill(DbMohito.Employee);
+            ClientTableAdapter = new ClientTableAdapter();
+            ClientTableAdapter.Fill(DbMohito.Client);
         }
 
         private bool IsMaximize = false;
@@ -55,13 +54,14 @@ namespace BeautyMohito
         {
             if (NameOn != null)
             {
-                NameTB.Text = Employee.NameOn;
-                SurnameTB.Text = Employee.SurnameOn;
-                PetronymicTB.Text = Employee.PetronymicOn;
-                NumberTB.Text = Employee.NumberOn;
-                DateDP.Text = Employee.DateOn;
-                IdUTB.SelectedItem = Employee.IdUOn;
-                IdPTB.SelectedItem = Employee.IdPOn;
+                NameTB.Text = Client.NameOn;
+                SurnameTB.Text = Client.SurnameOn;
+                NumberTB.Text = Client.NumberOn;
+                NotesTB.Text = Client.NotesOn;
+                EmailTB.Text = Client.EmailOn;
+               
+
+
                 InsertBtn.Visibility = Visibility.Collapsed;
                 AddText.Visibility = Visibility.Collapsed;
                 UpdateBtn.Visibility = Visibility.Visible;
@@ -88,8 +88,8 @@ namespace BeautyMohito
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            Employee Employee = new Employee();
-            Employee.Show();
+            Client client = new Client();
+            client.Show();
             this.Close();
 
             UpdateBtn.Visibility = Visibility.Collapsed;
@@ -103,11 +103,12 @@ namespace BeautyMohito
             try
             {
                 if (!String.IsNullOrWhiteSpace(NameTB.Text) && !String.IsNullOrWhiteSpace(SurnameTB.Text)
-                             && !String.IsNullOrWhiteSpace(NumberTB.Text) && !String.IsNullOrWhiteSpace(DateDP.Text) &&
-                             NameTB.Text.Length >= 4 && SurnameTB.Text.Length >= 2 && NumberTB.Text.Length >= 7 && Convert.ToInt32(IdUTB.SelectedValue) > -1 && Convert.ToInt32(IdPTB.SelectedValue) > -1)
+                             && !String.IsNullOrWhiteSpace(NumberTB.Text) && !String.IsNullOrWhiteSpace(EmailTB.Text) &&
+                             NameTB.Text.Length >= 4 && SurnameTB.Text.Length >= 2 && NumberTB.Text.Length >= 7 
+                             && EmailTB.Text.Length >= 7)
                 {
-                    new EmployeeTableAdapter().InsertQuery(Convert.ToString(NameTB.Text), Convert.ToString(SurnameTB.Text), Convert.ToString(PetronymicTB.Text),
-                       Convert.ToString(NumberTB.Text), Convert.ToDateTime(DateDP.Text), Convert.ToInt32(IdUTB.SelectedValue), Convert.ToInt32(IdPTB.SelectedValue));
+                    new ClientTableAdapter().InsertQuery(Convert.ToString(NameTB.Text), Convert.ToString(SurnameTB.Text),
+                       Convert.ToString(NumberTB.Text), Convert.ToString(NotesTB.Text), Convert.ToString(EmailTB.Text));
                     tb_error.Text = "";
                     tb_ok.Text = "✔ Данные успешно добавлены";
 
@@ -132,11 +133,12 @@ namespace BeautyMohito
             try
             {
                 if (!String.IsNullOrWhiteSpace(NameTB.Text) && !String.IsNullOrWhiteSpace(SurnameTB.Text)
-                            && !String.IsNullOrWhiteSpace(NumberTB.Text) && !String.IsNullOrWhiteSpace(DateDP.Text) &&
-                            NameTB.Text.Length >= 4 && SurnameTB.Text.Length >= 2 && NumberTB.Text.Length >= 7 && Convert.ToInt32(IdUTB.SelectedValue) > -1 && Convert.ToInt32(IdPTB.SelectedValue) > -1)
+                             && !String.IsNullOrWhiteSpace(NumberTB.Text) && !String.IsNullOrWhiteSpace(EmailTB.Text) &&
+                             NameTB.Text.Length >= 4 && SurnameTB.Text.Length >= 2 && NumberTB.Text.Length >= 7
+                             && EmailTB.Text.Length >= 7)
                 {
-                    new EmployeeTableAdapter().UpdateQuery(Convert.ToString(NameTB.Text), Convert.ToString(SurnameTB.Text), Convert.ToString(PetronymicTB.Text),
-                       Convert.ToString(NumberTB.Text), Convert.ToDateTime(DateDP.Text), Convert.ToInt32(IdUTB.SelectedItem), Convert.ToInt32(IdPTB.SelectedItem), Convert.ToInt32(IdOn));
+                    new ClientTableAdapter().UpdateQuery(Convert.ToString(NameTB.Text), Convert.ToString(SurnameTB.Text),
+                       Convert.ToString(NumberTB.Text), Convert.ToString(NotesTB.Text), Convert.ToString(EmailTB.Text), Convert.ToInt32(IdOn));
                     tb_error.Text = "";
                     tb_ok.Text = "✔ Данные успешно изменены";
                     RefreshData();

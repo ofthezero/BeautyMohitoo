@@ -50,6 +50,18 @@
                                     <TextBlock Text="Продажи"/>
                                 </StackPanel>
                             </Button>
+                            <Button Style="{StaticResource menuButton}" Cursor="Hand" Click="Client_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="AccountMultipleOutline" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Клиенты"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Style="{StaticResource menuButton}" Cursor="Hand" Click="Service_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="DockRight" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Услуги"/>
+                                </StackPanel>
+                            </Button>
                             <Button Style="{StaticResource menuButton}"  Cursor="Hand" Click="Review_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="Star" Style="{StaticResource menuButtonIcon}"/>
@@ -118,7 +130,7 @@
                            Panel.ZIndex="1" Text="Search in Members ..."
                            Visibility="{Binding ElementName=textBoxFilter, Path=Text, Converter={StaticResource BoolToVis}}" />
 
-                    <TextBox Name="textBoxFilter" Style="{StaticResource filterTextBox}" KeyUp="FilterClick" Height="28"/>
+                    <TextBox Name="textBoxFilter" Style="{StaticResource filterTextBox}" KeyUp="textBoxFilter_KeyUp" Height="28"/>
                 </Grid>
 
                 <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" x:Name="membersDataGrid" Style="{DynamicResource DataGridStyle1}" Margin="0,10,0,10" Grid.Row="5" SelectionChanged="membersDataGrid_SelectionChanged">

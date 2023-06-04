@@ -11,7 +11,7 @@ using System.Windows.Threading;
 
 namespace BeautyMohito
 {
-    public partial class Cheque : Window
+    public partial class OneCheque : Window
     {
 
         SqlConnection con = new SqlConnection();
@@ -28,7 +28,7 @@ namespace BeautyMohito
         public static string DateOn;
         public static string IdBOn;
         public static string IdGOn;
-        public Cheque()
+        public OneCheque()
         {
             //con.ConnectionString = ConfigurationManager.ConnectionStrings["Mohito.Properties.Settings.MohitoConnectionString"].ConnectionString.ToString();
             InitializeComponent(); RefreshData(); SaveSize();
@@ -118,7 +118,7 @@ namespace BeautyMohito
             this.Close();
         }
 
-       
+
 
         private void textBoxFilter_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
@@ -158,7 +158,7 @@ namespace BeautyMohito
             review.Show();
             this.Close();
         }
-      
+
         private void Service_Click(object sender, RoutedEventArgs e)
         {
             Service service = new Service();
@@ -185,24 +185,23 @@ namespace BeautyMohito
             roles.Show();
             this.Close();
         }
-        private void UpdateUserBtn_Click(object sender, RoutedEventArgs e)
+       
+      
+        private void Statistics_Click(object sender, RoutedEventArgs e)
         {
-            UpdateCheque updateCheque = new UpdateCheque();
-            updateCheque.Show();
+            Statistics statistics = new Statistics();
+            statistics.Show();
             this.Close();
-        }
-        private void Cheque_Click(object sender, RoutedEventArgs e)
-        {
 
         }
 
-        private void Print_Click(object sender, RoutedEventArgs e)
+            private void Print_Click(object sender, RoutedEventArgs e)
         {
-            ChequePrint chequePrint = new ChequePrint();
+            OneChequePrint chequePrint = new OneChequePrint();
             chequePrint.Show();
             this.Close();
         }
-        
+
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
@@ -239,10 +238,11 @@ namespace BeautyMohito
             }
             else
             {
-              
+
             }
         }
 
+      
       
     }
 }

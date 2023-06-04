@@ -38,22 +38,6 @@ namespace BeautyMohito
 
                     switch (roleID)
                     {
-                        case "1005":
-                            {
-                                MainWindow manager = new MainWindow();
-                                manager.Show();
-                                this.Close();
-                                break;
-                            }
-
-                        case "2":
-                            {
-                                Equipment pmanager = new Equipment();
-                                pmanager.Show();
-                                this.Close();
-                                break;
-                            }
-
                         case "1":
                             {
                                 Backup admin = new Backup();
@@ -61,6 +45,40 @@ namespace BeautyMohito
                                 this.Close();
                                 break;
                             }
+
+                        case "3":
+                            {
+                                Book book = new Book();
+                                book.Show();
+                                this.Close();
+                                break;
+                            }
+
+                        case "4":
+                            {
+                                Employee employee = new Employee();
+                                employee.Show();
+                                this.Close();
+                                break;
+                            }
+
+                        case "5":
+                            {
+                                Equipment pmanager = new Equipment();
+                                pmanager.Show();
+                                this.Close();
+                                break;
+                            }
+
+                        case "6":
+                            {
+                                Statistics statistics = new Statistics();
+                                statistics.Show();
+                                this.Close();
+                                break;
+                            }
+
+
                         default: break;
                     }
                 }
@@ -72,33 +90,6 @@ namespace BeautyMohito
         {
             this.Close();
         }
-
-        //private void OnKeyDownHandler(object sender, KeyEventArgs e)
-        //{
-        //    if (e.Key == Key.Enter && btnLogin2.Visibility == Visibility.Collapsed) btnLogin.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
-        //    if (e.Key == Key.Enter && btnLogin.Visibility == Visibility.Collapsed) btnLogin2.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
-        //    if (e.Key == Key.Enter) btnLogin2.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
-
-        //    if (e.Key == Key.F2)
-        //    {
-        //        //AdminDB adminDB = new AdminDB();
-        //        //adminDB.Show();
-        //        //this.Close();
-        //    }
-        //    if (e.Key == Key.F3)
-        //    {
-        //        //Manager manager = new Manager();
-        //        //manager.Show();
-        //        //this.Close();
-        //    }
-        //    if (e.Key == Key.F4)
-        //    {
-        //        //OK R = new OK();
-        //        //R.Show();
-        //        //this.Close();
-        //    }
-
-        //}
 
         private void pass_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -124,18 +115,42 @@ namespace BeautyMohito
 
                     switch (roleID)
                     {
-                        case "2":
+                        case "1":
                             {
-                                MainWindow manager = new MainWindow();
-                                manager.Show();
+                                Backup admin = new Backup();
+                                admin.Show();
                                 this.Close();
                                 break;
                             }
 
-                        case "1":
+                        case "3":
                             {
-                                MainWindow manager = new MainWindow();
-                                manager.Show();
+                                Book book = new Book();
+                                book.Show();
+                                this.Close();
+                                break;
+                            }
+
+                        case "4":
+                            {
+                                Employee employee = new Employee();
+                                employee.Show();
+                                this.Close();
+                                break;
+                            }
+
+                        case "5":
+                            {
+                                Equipment pmanager = new Equipment();
+                                pmanager.Show();
+                                this.Close();
+                                break;
+                            }
+
+                        case "6":
+                            {
+                                Statistics statistics = new Statistics();
+                                statistics.Show();
                                 this.Close();
                                 break;
                             }

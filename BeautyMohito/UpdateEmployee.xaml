@@ -59,17 +59,17 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="10" Width="288">
-                    <TextBox x:Name="SurnameTB" Margin="10 0" materialDesign:HintAssist.Hint="Введите фамилию"  MaxLength="6" Foreground="BLACK" Width="250" BorderBrush="#B38B59" CaretBrush="#B38B59" SelectionBrush="#B38B59" />
+                    <TextBox x:Name="SurnameTB" Margin="10 0" materialDesign:HintAssist.Hint="Введите фамилию"  MaxLength="20" Foreground="BLACK" Width="250" BorderBrush="#B38B59" CaretBrush="#B38B59" SelectionBrush="#B38B59" />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="10" Width="288">
-                    <TextBox x:Name="PetronymicTB" Margin="10 0" materialDesign:HintAssist.Hint="Введите отчество"  MaxLength="7" Foreground="BLACK" Width="250" BorderBrush="#B38B59" CaretBrush="#B38B59" SelectionBrush="#B38B59" />
+                    <TextBox x:Name="PetronymicTB" Margin="10 0" materialDesign:HintAssist.Hint="Введите отчество"  MaxLength="20" Foreground="BLACK" Width="250" BorderBrush="#B38B59" CaretBrush="#B38B59" SelectionBrush="#B38B59" />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="10" Width="288">
-                    <TextBox x:Name="NumberTB" Margin="10 0" materialDesign:HintAssist.Hint="Введите контакный номер"  MaxLength="15" Foreground="BLACK" Width="250" BorderBrush="#B38B59" CaretBrush="#B38B59" SelectionBrush="#B38B59" />
+                    <TextBox x:Name="NumberTB" Margin="10 0" materialDesign:HintAssist.Hint="Введите контакный номер"  MaxLength="12" Foreground="BLACK" Width="250" BorderBrush="#B38B59" CaretBrush="#B38B59" SelectionBrush="#B38B59" />
                 </StackPanel>
-                
+
                 <StackPanel Orientation="Horizontal" Margin="10" Width="264">
                     <DatePicker x:Name="DateDP" Width="251" materialDesign:HintAssist.Hint="Выберите даты рождения" Foreground="Black" BorderBrush="#B38B59" />
                 </StackPanel>

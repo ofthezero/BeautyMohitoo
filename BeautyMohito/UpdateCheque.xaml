@@ -1,12 +1,108 @@
 ﻿<Window x:Class="BeautyMohito.UpdateCheque"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       
+        
         xmlns:local="clr-namespace:BeautyMohito"
         mc:Ignorable="d"
-        Title="UpdateCheque" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="720" Width="1080" WindowStartupLocation="CenterScreen"   WindowStyle="None" 
+        AllowsTransparency="True" Background="Transparent">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </Window.Resources>
+
+    <Border CornerRadius="30" Background="#EFF2F7" MouseDown="Border_MouseDown" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="63*"/>
+                <ColumnDefinition Width="157*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Left Menu-->
+            <Grid Grid.ColumnSpan="2" Margin="0,0,201,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!--Menu Icon-->
+
+                <Border Grid.Row="1" Background="#2c4f49" CornerRadius="30 30 30 30"  Margin="0,0,-196,0">
+                    <Grid>
+                        <TextBlock Text="MOHITO" Foreground="#d5bea9" FontSize="37" FontWeight="SemiBold"  FontFamily="Copperplate Gothic Light" TextAlignment="Center" Margin="98,327,98,343"/>
+                    </Grid>
+
+
+                </Border>
+
+
+
+
+            </Grid>
+
+            <Button x:Name="Close" Style="{StaticResource topButton}" Cursor="Hand" Margin="0,18,19,672" Grid.Column="2" Click="Close_Click">
+                <Icon:PackIconMaterial Kind="Close"/>
+            </Button>
+            <Button x:Name="Back" Style="{StaticResource topButton}" Cursor="Hand" Margin="0,18,153,672" Click="Back_Click">
+
+                <materialDesign:PackIcon Kind="ArrowBack" Height="27" Width="30"/>
+            </Button>
+
+            <TextBlock x:Name="tb_error" Text="" Margin="152,487,98,194" Foreground="#FFEB2121" TextWrapping="Wrap" TextAlignment="Center" FontSize="16" FontFamily="Bodoni MT" Grid.Column="2"/>
+            <TextBlock x:Name="tb_ok" Text=""  Margin="165,487,112,194"  Foreground="#FF6EF961" TextWrapping="Wrap" TextAlignment="Center" FontSize="16" FontFamily="Bodoni MT" Grid.Column="2"/>
+            <TextBlock x:Name="tb2" Text=""  Margin="165,487,112,194" Visibility="Visible" TextWrapping="Wrap" TextAlignment="Center" FontSize="16" FontFamily="Bodoni MT" Grid.Column="2"/>
+
+
+
+
+
+
+
+
+            <TextBlock x:Name="AddText" Text="Пробития чека" Visibility="Visible" TextWrapping="WrapWithOverflow" Foreground="#2c4f49" FontSize="35" FontWeight="Bold"  FontFamily="Corbel Light"  TextAlignment="Center" Margin="126,185,98,492" Grid.Column="2"/>
+
+            <StackPanel Grid.Column="2" Margin="126,253,82,341">
+
+                <StackPanel Orientation="Horizontal" Margin="10" Width="288">
+                    <ComboBox x:Name="IdBTB"  Style="{StaticResource MaterialDesignComboBox}" Margin="10 0" materialDesign:HintAssist.Hint="Выберите запись"  Foreground="BLACK" Width="250" BorderBrush="#B38B59" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10" Width="288">
+                    <ComboBox x:Name="IdGTB"  Style="{StaticResource MaterialDesignComboBox}" Margin="10 0" materialDesign:HintAssist.Hint="Выберите товар"  Foreground="BLACK" Width="250" BorderBrush="#B38B59" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10" Width="255" Height="19">
+                    <RadioButton x:Name="radioButton_Наличные" Content="Наличные" Foreground="#B38B59" BorderBrush="#B38B59" Background="#B38B59"/>
+                    <StackPanel Width="22"></StackPanel>
+                    <RadioButton x:Name="radioButton_Карта" Content="Электронный платеж" Foreground="#B38B59" Background="#B38B59" BorderBrush="#B38B59"/>
+
+                </StackPanel>
+
+
+
+
+            </StackPanel>
+            <StackPanel Width="168" Height="76"/>
+            <Button Style="{StaticResource addButton}" Width="166" Cursor="Hand" HorizontalContentAlignment="Center" x:Name="InsertBtn" Click="add_Click" Visibility="Visible" Height="NaN" Grid.Column="2" Margin="0,403,204,275" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Пробить чек"/>
+                </StackPanel>
+            </Button>
+            
+
+
+
+
+
+
+        </Grid>
+
+
+    </Border>
+
+
 </Window>
