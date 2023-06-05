@@ -28,6 +28,12 @@ namespace BeautyMohito
             DbMohito = new DbMohito();
             ReviewTableAdapter = new ReviewTableAdapter();
             ReviewTableAdapter.Fill(DbMohito.Review);
+
+            NameEmployeeViewTableAdapter adapterU = new NameEmployeeViewTableAdapter(); //вывод данных - 
+            DbMohito.NameEmployeeViewDataTable tableU = new DbMohito.NameEmployeeViewDataTable();
+            adapterU.Fill(tableU); IdETB.ItemsSource = tableU;
+            IdETB.DisplayMemberPath = "Names";
+            IdETB.SelectedValuePath = "ID_employee";
         }
 
         private bool IsMaximize = false;
@@ -39,8 +45,8 @@ namespace BeautyMohito
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow R = new MainWindow();
-            R.Show();
+          
+           
             this.Close();
         }
 

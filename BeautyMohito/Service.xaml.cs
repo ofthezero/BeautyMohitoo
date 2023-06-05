@@ -26,7 +26,7 @@ namespace BeautyMohito
         private DispatcherTimer _timer;
         public static int to;
 
-        string sizeBooking = Booking.sizeSave;
+        string sizeBooking;
         public static string sizeSave;
 
         public static string IdOn;
@@ -94,18 +94,18 @@ namespace BeautyMohito
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Booking booking = new Booking();
+           
 
             if (sizeSave == "1")
             {
 
-                booking.WindowState = WindowState.Normal; booking.Width = 1080; booking.Height = 720; IsMaximize = false;
-                booking.Show();
+               
+                
             }
             else
             {
-                booking.WindowState = WindowState.Maximized; IsMaximize = true;
-                booking.Show();
+                
+                
             }
             this.Close();
         }

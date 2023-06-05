@@ -30,9 +30,7 @@ namespace BeautyMohito
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow menu = new MainWindow();
-            menu.Show();
-            this.Close();
+          
         }
 
         private static void BckpMohitp(string connection, string mohito, string fileMohito)

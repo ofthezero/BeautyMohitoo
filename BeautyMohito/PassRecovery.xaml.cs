@@ -12,7 +12,7 @@ namespace BeautyMohito
         SqlConnection con = new SqlConnection();
         DbMohito DbMohito;
         UserTableAdapter userTableAdapter;
-        string sizeBooking = Booking.sizeSave;
+        string sizeBooking;
 
         public static string sizeSave;
         public static string IsFilter;
@@ -81,18 +81,18 @@ namespace BeautyMohito
         
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Booking booking = new Booking();
+           
 
             if (sizeSave == "1")
             {
 
-                booking.WindowState = WindowState.Normal; booking.Width = 1080; booking.Height = 720; IsMaximize = false;
-                booking.Show();
+               
+                
             }
             else
             {
-                booking.WindowState = WindowState.Maximized; IsMaximize = true;
-                booking.Show();
+                
+                
             }
             this.Close();
         }
@@ -118,10 +118,11 @@ namespace BeautyMohito
                     conn.Close();
 
                     tb_error.Text = "";
-                    this.Close();
+                  
 
-                    MainWindow R = new MainWindow();
-                    R.Show();
+
+                    Auth auth = new Auth();
+                    auth.Show();
                     this.Close();
                 }
                 else
@@ -161,8 +162,8 @@ namespace BeautyMohito
                         tb_error.Text = "";
                         this.Close();
 
-                        MainWindow R = new MainWindow();
-                        R.Show();
+                      
+                       
                         this.Close();
                     }
                     else

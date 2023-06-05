@@ -41,8 +41,8 @@ namespace BeautyMohito
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow R = new MainWindow();
-            R.Show();
+          
+           
             this.Close();
         }
 
